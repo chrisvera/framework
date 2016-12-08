@@ -6,6 +6,7 @@ class UsersController extends AppController {
 		parent::__construct();
 	}
 
+	
 	public function index(){
 		//opcion 1
 		$options= array(
@@ -20,6 +21,7 @@ class UsersController extends AppController {
 				)
 			);
 		$this->set("usersCount", $this->users->find("users", "count"));
+		$this->set("title", "listadoo");
 
 
 		//opcion 2
@@ -48,10 +50,10 @@ class UsersController extends AppController {
 
 	public function edit($id){
 		if ($_POST) {
-			if (!empty($_POST["newPassword"])) {
+			if (!empty($_POST["NewPassword"])) {
 				$pass = new Password();
-				$_POST["password"] = $pass->getPassword($_POST["Newpassword"]);
-				$_POST["password"] = $_POST["newPassword"];
+				$_POST["password"] = $pass->getPassword($_POST["NewPassword"]);
+				
 			}
 			
 			if ($this->users->update("users", $_POST)) {

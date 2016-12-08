@@ -1,8 +1,8 @@
 <h2>Tipos</h2>
 
-
-<table>
-	<tr>
+<div class="table-responsive">
+	<table class="table table-striped"> 
+		<tr>
 		<th>Id</th>
 		<th>Name</th>
 		<th>Action</th>
@@ -13,11 +13,31 @@
 	<td><?php echo $type["types"]["id"]; ?></td>
 	<td><?php echo $type["types"]["name"]; ?></td>
 	<td>
-		<a href="<?php echo APP_URL."/types/edit/".$type["types"]["id"]; ?>">Edit</a>
-		<a href="<?php echo APP_URL."/types/delete/".$type["types"]["id"]; ?>">Delete</a>
 
+			<?php
+				echo $this->Html->link(
+					"<span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>", "/types/edit/".$type["types"]["id"],
+					array(
+						"title"=>"Editar tipo",
+						"target"=>"_blank"
+					)
+				);
+			?>
+			<?php
+				echo $this->Html->link(
+					"Delete", 
+					"/types/delete/".$type["types"]["id"]
+					
+				);
+			?>
+			
 	</td>
+
+	
 </tr>
 <?php endforeach; ?>
 
-</table>
+	</table>
+</div>
+
+

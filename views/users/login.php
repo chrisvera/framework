@@ -1,4 +1,4 @@
-<h3>Inicio de secion</h3>
+<h1>Inicio de secion</h1>
 
 <form action="<?php echo APP_URL."/users/login"; ?>" method="POST" >
 	<p>
