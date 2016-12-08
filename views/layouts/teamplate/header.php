@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-       <title>Framework Básico 
+       <title>Money Tracking
             <?php 
                 if (!empty($title)) {
                     echo "»".$title;
@@ -71,7 +71,7 @@
         </li>
 
         <li class="cluser"><a href="#">Transacciones<span class="cl"></span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Cuentas</a></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
