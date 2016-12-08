@@ -27,7 +27,10 @@ class classPDO
 	$this->password = $password;
 	$this->connection();
 	} 
-
+/**//**
+ * Description
+ * 
+ */
 	private function connection(){
 		$this->dsn = $this->drive.":host=".$this->host.";dbname=".$this->database;
 
