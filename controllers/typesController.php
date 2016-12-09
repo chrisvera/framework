@@ -1,4 +1,7 @@
 <?php 
+/**
+ * clase de types
+ */
 class typesController extends AppController {
 
 	public function __construct(){
@@ -20,6 +23,10 @@ class typesController extends AppController {
 			);
 	}
 
+/**
+ * el metodo add agrega los tipos de usuarios 
+ * @return type
+ */
 
 	public function add(){
 
@@ -38,7 +45,11 @@ class typesController extends AppController {
 			$this->redirect(array("controller"=>"users"));
 			}
 		}
-
+/**
+ * edita los tipos d usuarios 
+ * @param type $id 
+ * @return type
+ */
 	public function edit($id){
 		if ($_POST) {
 			
@@ -64,6 +75,11 @@ class typesController extends AppController {
 		
 	}
 
+/**
+ * metodo para la eliminacion de los tipos de usuarios
+ * @param type $id 
+ * @return type
+ */
 	public function delete($id){
 		$options = "types.id=".$id;
 		if($this->types->delete("types", $options)){

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * clase page controller
+ */
 class PagesController extends AppController
 {
 	public function __construct(){

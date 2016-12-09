@@ -1,9 +1,21 @@
 <?php 
+/**
+ * clase categorias
+ */
 class categoriesController extends AppController {
 
+/**
+ * metodo constructor 
+ * @return type
+ */
 	public function __construct(){
 		parent::__construct();
 	}
+
+/**
+ * metodo index
+ * @return type
+ */
 
 	public function index(){
 		//opcion 1
@@ -19,8 +31,10 @@ class categoriesController extends AppController {
 				)
 			);
 	}
-
-
+/**
+ * metodo para agrgar categorias
+ * @return type
+ */
 	public function add(){
 
 		if ($_SESSION["type_name"]=="Administradores") {
@@ -38,6 +52,11 @@ class categoriesController extends AppController {
 			$this->redirect(array("controller"=>"users"));
 			}
 		}
+
+/**
+ * metodo que sirve editar una categoria
+ * @return type
+ */
 
 	public function edit($id){
 		if ($_POST) {
@@ -64,6 +83,10 @@ class categoriesController extends AppController {
 		
 	}
 
+/**
+ * metodo delete sirve para eliminar una categoria
+ * @return type
+ */
 	public function delete($id){
 		$options = "categories.id=".$id;
 		if($this->categories->delete("categories", $options)){

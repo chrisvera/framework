@@ -140,7 +140,12 @@ class classPDO
 
 		return $this->result;
 	}
-
+	/**//**
+	 * Description
+	 * @param type $table 
+	 * @param type|array $data 
+	 * @return type
+	 */
 	public function update($table, $data = array()){
 		$sql = "SELECT * FROM $table";
 		$result = $this->connection->query($sql);

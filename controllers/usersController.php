@@ -30,6 +30,10 @@ class UsersController extends AppController {
 
 	}
 
+	/**
+	 * mtodo para agregar un usuario
+	 * @return type
+	 */
 	public function add(){
 
 		if ($_SESSION["type_name"]=="Administradores") {
@@ -48,6 +52,11 @@ class UsersController extends AppController {
 			}
 		}
 
+/**
+ * metodo para editar un usuario
+ * @param type $id 
+ * @return type
+ */
 	public function edit($id){
 		if ($_POST) {
 			if (!empty($_POST["NewPassword"])) {
@@ -77,6 +86,11 @@ class UsersController extends AppController {
 		
 	}
 
+/**
+ * metodo para eliminar un usuario
+ * @param type $id 
+ * @return type
+ */
 	public function delete($id){
 		$options = "users.id=".$id;
 		if($this->users->delete("users", $options)){
@@ -85,6 +99,10 @@ class UsersController extends AppController {
 
 	}
 
+/**
+ * este metodo para qu ingrese un usuario mdiant el login
+ * @return type
+ */
 	public function login(){
 		$this->_view->setLayout("login");
 
@@ -118,6 +136,10 @@ class UsersController extends AppController {
 		}
 	}
 
+/**
+ * mtodo para salir de la sesion
+ * @return type
+ */
 	public function logout(){
 		$auth = new Authorization();
 		$auth->logout();
