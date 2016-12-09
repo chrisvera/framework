@@ -28,6 +28,12 @@ abstract class AppController
 			$this->_view->setVars($data);
 		}
 
+		/**
+		 * redireccion -> controlador
+		 * @param type|array $url 
+		 * @return type
+		 */
+
 		public function redirect($url=array()){
 		$path = "";
 			if ($url['controller']) {

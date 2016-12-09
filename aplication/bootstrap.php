@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * clase Bootstrap
+ */
 class Bootstrap
 {
 	public static function run(Request $petition){
@@ -15,6 +19,8 @@ class Bootstrap
 			if ($method=="login") {
 				
 			}else{
+				/*esta lina indica que para poder ingresar a la aplicacion es necesario el login
+				es decir que el login aparecera como una obligacion requerida**/
 				Authorization::logged();
 			}
 

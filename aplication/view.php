@@ -1,4 +1,7 @@
 <?php
+/**
+ * clase view
+ */
 class view
 {
 	private $_controller;
@@ -8,13 +11,21 @@ class view
 	private $viewsVars;
 	public $helper = array("Html");
 
+/**
+ * constructor
+ * @param Request $petition 
+ * @return type
+ */
 	public function __construct(Request $petition){
 		$this->_controller = $petition->getController();
 		$this->_method = $petition->getMethod();
 		$this->_view = $this->_method;
 		$this->loadHelper(); 
 	}
-
+/**
+ * Cargar el helper
+ * @return type
+ */
 	public function loadHelper(){
 		if (!empty($this->helper)) {
 			foreach ($this->helper as $key => $value) {

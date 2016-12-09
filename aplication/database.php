@@ -13,6 +13,16 @@ class classPDO
 	public $lastInsertId;
 	public $numberRows;
 
+/**
+ * en el constructor se asignan los datos para la conexión de la BD
+ * 
+ * @param type|string $drive 
+ * @param type|string $host 
+ * @param type|string $database 
+ * @param type|string $username 
+ * @param type|string $password 
+ * @return type
+ */
 	public function __construct(
 		$drive = "mysql",
 		$host = "localhost",
@@ -27,9 +37,9 @@ class classPDO
 	$this->password = $password;
 	$this->connection();
 	} 
-/**//**
- * Description
- * 
+/**
+ *clase para realizar la conexion a la base de datos
+  
  */
 	private function connection(){
 		$this->dsn = $this->drive.":host=".$this->host.";dbname=".$this->database;
@@ -49,6 +59,14 @@ class classPDO
 			die();
 		}
 	}
+
+/**
+ * metodo para hacr una busqueda 
+ * @param type $table 
+ * @param type|null $query 
+ * @param type|array $options 
+ * @return type
+ */
 
 	public function find($table, $query = NULL, $options = array()){
 		$fields = "*";
@@ -115,6 +133,12 @@ class classPDO
 		return $this->result;
 	}
 
+/**
+ * metodo para guardar e insertar a la BD
+ * @param type $table 
+ * @param type|array $data 
+ * @return type
+ */
 	public function save($table, $data = array()){
 		$sql = "SELECT * FROM $table";
 		$result = $this->connection->query($sql);
@@ -140,8 +164,8 @@ class classPDO
 
 		return $this->result;
 	}
-	/**//**
-	 * Description
+	/**
+	 * metodo para actualizar
 	 * @param type $table 
 	 * @param type|array $data 
 	 * @return type
@@ -172,7 +196,12 @@ class classPDO
 		$this->result = $this->connection->query($sql);
 		return $this->result;
 	}
-
+/**
+ * metodo para eliminar
+ * @param type $table 
+ * @param type $condition 
+ * @return type
+ */
 	public function delete($table, $condition){
 		$sql= "DELETE FROM $table WHERE $condition";
 		$this->result = $this->connection->query($sql);

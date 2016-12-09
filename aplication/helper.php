@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Clase helper
+ */
 class Helper
 {	
 	protected $_controller;
